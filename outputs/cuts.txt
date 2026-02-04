@@ -1,0 +1,13 @@
+Video: data\raw\clip_001fixed.mp4
+FPS: 31.86
+Detected 9 potential hard cuts (threshold=35.0).
+First 30 cuts:
+01  frame=189  time=5.93s  score=58.6
+02  frame=464  time=14.56s  score=48.9
+03  frame=688  time=21.60s  score=48.8
+04  frame=788  time=24.73s  score=136.1
+05  frame=789  time=24.77s  score=124.6
+06  frame=1025  time=32.17s  score=62.1
+07  frame=1026  time=32.21s  score=90.4
+08  frame=1027  time=32.24s  score=152.8
+09  frame=1222  time=38.36s  score=53.0
