@@ -6,7 +6,7 @@ TRACK_DIR = Path("outputs/tracks")
 LABELS_PATH = Path("labels/phrases.csv")
 OUT_PATH = Path("outputs/train_features.csv")
 
-PRE_WINDOW = 15  # frames before first action
+PRE_WINDOW = 15  # frames before first action (~0.5s at 30fps)
 
 def center(row, prefix):
     x, y, w, h = row[f"{prefix}_x"], row[f"{prefix}_y"], row[f"{prefix}_w"], row[f"{prefix}_h"]
@@ -56,6 +56,7 @@ def main():
         L_mean, L_max = mean_max_speed(seg, "L")
         R_mean, R_max = mean_max_speed(seg, "R")
 
+        # distance closing (positive means they got closer)
         dists = []
         for _, r in seg.iterrows():
             Lc = center(r, "L")
@@ -77,7 +78,6 @@ def main():
     out_df = pd.DataFrame(rows)
     out_df.to_csv(OUT_PATH, index=False)
     print(f"Saved training features to: {OUT_PATH} (rows={len(out_df)})")
-    print(out_df[["clip", "y_first_action_is_R"]])
 
 if __name__ == "__main__":
     main()
