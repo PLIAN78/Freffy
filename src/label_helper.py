@@ -2,7 +2,7 @@ import cv2
 import pandas as pd
 from pathlib import Path
 
-CLIPS_DIR = Path("outputs/stabilized")   # label stabilized clips (recommended)
+CLIPS_DIR = Path("outputs/tracks_debug")  # label stabilized clips (recommended)
 LABELS_PATH = Path("labels/phrases.csv")
 LABELS_PATH.parent.mkdir(parents=True, exist_ok=True)
 
